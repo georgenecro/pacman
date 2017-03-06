@@ -13,13 +13,13 @@
     <script src="//cdn.jsdelivr.net/phaser/2.2.2/phaser.min.js"></script>
 </head>
 <body>
-
+    
+    <audio controls>
+         <source src="Get.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    
     <script type="text/javascript">
-     <div style="visibility:hidden">
-        <audio autoplay loop>
-            <source src="../assets/Gem.mp3">
-        </audio> 
-    </div>
     var game = new Phaser.Game(448, 496, Phaser.AUTO);
         
     var Pacman = function (game) {
