@@ -17,9 +17,11 @@
     <script type="text/javascript"> 
     var game = new Phaser.Game(448, 496, Phaser.AUTO);
         
-    <embed src="../assets/Gem.mp3" autostart="true" loop="true"
-        width="2" height="0">
-    </embed>
+    <div style="visibility:hidden">
+        <audio autoplay loop>
+            <source src="../assets/Gem.mp3">
+        </audio> 
+    </div>
         
     var Pacman = function (game) {
 
