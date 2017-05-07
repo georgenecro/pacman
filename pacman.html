@@ -12,12 +12,18 @@
     
 	
     </style>
+	
 	<!--
-	<audio   autoplay loop> 
+	
+	<audio autoplay id = "GetLucky" loop> 
 		<source src="assets/GetLucky.mp3" type="audio/mpeg">
 	</audio>
-	
-    -->
+    <script>
+        var audio = document.getElementById("GetLucky");
+        GetLucky.volume = 0.2;
+    </script>
+	-->
+
     <script src="//cdn.jsdelivr.net/phaser/2.2.2/phaser.min.js"></script>
 </head>
 <body>
@@ -28,8 +34,11 @@
         
     var Pacman = function (game) {
 
-		this.score = 0;
+		this.score = 0;										//arxikop score
 		this.scoreText = null;
+		
+		var lives = 3;       								//arxikop life
+		var livesText;
 	
         this.map = null;
         this.layer = null;
@@ -108,15 +117,20 @@
             this.dots.setAll('y', 1, false, false, 1);
 
 			//  The powerups will need to be offset by 6px to put them back in the middle of the grid
-            this.powerups.setAll('x', -1.5, false, false, 1);
-            this.powerups.setAll('y', -1.5, false, false, 1);
+            this.powerups.setAll('x', 1, false, false, 1);
+            this.powerups.setAll('y', 1, false, false, 1);
 			
 			// Score
-			this.scoreText = game.add.text(80, 4, "Score: " + this.score, { fontSize: "16px", fill: "#49311c" });
+			this.scoreText = game.add.text(70, 4, "Score: " + this.score, { fontSize: "16px", fill: "#49311c" });
 			
             //  Pacman should collide with everything except the safe tile
             this.map.setCollisionByExclusion([7,30,329,330,340,341,351,352,362,363,438], true, this.layer);   //edw vazw ta plakakia pou pataei
 
+			
+			//Life
+			livesText = game.add.text(475, 4, "Lives: 3", {fontSize: "16px",  fill: "#49311c"});
+			 
+			 
             //  Position Pacman at grid location 14x17 (the -90 accounts for his anchor)
             this.pacman = this.add.sprite((14 * 16) + 8, (17 * 20) +8, 'pacman', 0);
             this.pacman.anchor.set(0.5);
