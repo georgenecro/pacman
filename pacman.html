@@ -156,22 +156,22 @@
 
             if (this.cursors.left.isDown && this.current !== Phaser.LEFT)
             {
-				this.pacman.play('munch');
+		
                 this.checkDirection(Phaser.LEFT);
             }
             else if (this.cursors.right.isDown && this.current !== Phaser.RIGHT)
             {	
-				this.pacman.play('munch');
+		
                 this.checkDirection(Phaser.RIGHT);
             }
             else if (this.cursors.up.isDown && this.current !== Phaser.UP)
             {
-				this.pacman.play('munch2');
+		
                 this.checkDirection(Phaser.UP);
             }
             else if (this.cursors.down.isDown && this.current !== Phaser.DOWN)
             {
-				this.pacman.play('munch1');
+		
                 this.checkDirection(Phaser.DOWN);
             }
             else
@@ -237,6 +237,8 @@
 
             if (direction === Phaser.LEFT || direction === Phaser.UP)
             {
+		    
+		    
                 speed = -speed;
             }
 
@@ -255,16 +257,25 @@
 
             if (direction === Phaser.LEFT)
             {
-                this.pacman.scale.x = -1;
+		this.pacman.play('munch');      	
+               
             }
-    /*      else if (direction === Phaser.UP)
+	    if (direction === Phaser.RIGHT)
             {
-                this.pacman.angle = 270;
+		
+		 this.pacman.scale.x = -1;  
+            }
+		
+            else if (direction === Phaser.UP)
+            {
+		this.pacman.play('munch2'); 
+               // this.pacman.angle = 270;
             }
             else if (direction === Phaser.DOWN)
             {
-                this.pacman.angle = 90;
-			}*/ 
+		 this.pacman.play('munch1');
+                //this.pacman.angle = 90;
+	    } 
 
            this.current = direction;
 
