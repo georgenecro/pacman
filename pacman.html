@@ -13,6 +13,7 @@
 	
     </style>
 	
+	<!--
 	
 	<audio autoplay id = "GetLucky" loop> 
 		<source src="assets/GetLucky.mp3" type="audio/mpeg">
@@ -21,7 +22,7 @@
         var audio = document.getElementById("GetLucky");
         GetLucky.volume = 0.2;
     </script>
-
+	-->
 
     <script src="//cdn.jsdelivr.net/phaser/2.2.2/phaser.min.js"></script>
 </head>
@@ -38,6 +39,8 @@
 		
 		var lives = 3;       								//arxikop life
 		var livesText;
+		
+		var chance;
 	
         this.map = null;
         this.layer = null;
@@ -121,6 +124,8 @@
 			
 			// Score
 			this.scoreText = game.add.text(70, 4, "Score: " + this.score, { fontSize: "16px", fill: "#49311c" });
+			
+			
 			
             //  Pacman should collide with everything except the safe tile
             this.map.setCollisionByExclusion([7,30,329,330,340,341,351,352,362,363,438], true, this.layer);   //edw vazw ta plakakia pou pataei
@@ -272,9 +277,19 @@
 					
             if (this.dots.total === 0)
             {
+				alert ("Congratz You Won");
                 this.dots.callAll('revive');
             }
 
+			chance = Math.floor((Math.random() * 100) + 1);
+			
+			if (chance >= 96){	
+				setTimeout(function(){
+					dot.revive();
+				},2000);
+
+			}
+	
         },
 		
 		eatPowerup: function (pacman, powerup) {
@@ -284,6 +299,8 @@
 			
 			var audio = new Audio('assets/SE.mp3');
             audio.play()
+			
+			
         },
 
         update: function () {
@@ -295,7 +312,6 @@
 			
 			// Update variable score
 			this.scoreText.text = "Score: " + this.score;
-			
 			
 			
             this.marker.x = this.math.snapToFloor(Math.floor(this.pacman.x), this.gridsize) / this.gridsize;
