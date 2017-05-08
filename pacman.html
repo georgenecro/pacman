@@ -254,18 +254,18 @@
             //  Reset the scale and angle (Pacman is facing to the right in the sprite sheet)
             this.pacman.scale.x = 1;
             this.pacman.angle = 0;
-
-            if (direction === Phaser.LEFT)
-            {
-		this.pacman.play('munch');      	
-               
-            }
+		
 	    if (direction === Phaser.RIGHT)
             {
-		
-		 this.pacman.scale.x = -1;  
+		this.pacman.play('munch'); 
+		  
             }
 		
+            if (direction === Phaser.LEFT)
+            {
+		this.pacman.scale.x = -1;   	
+               
+	    }
             else if (direction === Phaser.UP)
             {
 		this.pacman.play('munch2'); 
