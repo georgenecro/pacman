@@ -41,6 +41,9 @@
 		var livesText;
 		
 		var chance;
+		
+		this.time = 0;
+		this.scoreTime = null;
 	
         this.map = null;
         this.layer = null;
@@ -124,7 +127,9 @@
 			
 			// Score
 			this.scoreText = game.add.text(70, 4, "Score: " + this.score, { fontSize: "16px", fill: "#49311c" });
-			
+				
+			// Time
+			this.scoreTime = game.add.text(250, 4, "Seconds: " + Math.floor(this.game.time.totalElapsedSeconds()), { fontSize: "16px", fill: "#49311c" });
 			
 			
             //  Pacman should collide with everything except the safe tile
@@ -322,6 +327,8 @@
 			// Update variable score
 			this.scoreText.text = "Score: " + this.score;
 			
+			// Update variable time
+			this.scoreTime.text = "Seconds: " + Math.floor(this.game.time.totalElapsedSeconds());
 			
             this.marker.x = this.math.snapToFloor(Math.floor(this.pacman.x), this.gridsize) / this.gridsize;
             this.marker.y = this.math.snapToFloor(Math.floor(this.pacman.y), this.gridsize) / this.gridsize;
@@ -331,7 +338,8 @@
             this.directions[2] = this.map.getTileRight(this.layer.index, this.marker.x, this.marker.y);
             this.directions[3] = this.map.getTileAbove(this.layer.index, this.marker.x, this.marker.y);
             this.directions[4] = this.map.getTileBelow(this.layer.index, this.marker.x, this.marker.y);
-
+			
+			
             this.checkKeys();
 
             if (this.turning !== Phaser.NONE)
