@@ -40,4 +40,14 @@
 
 - Τελική αναφορά.
 
+
+## Links ##
 - <a href="https://georgenecro.github.io/pacman/">Github Page</a>
+
+- To <a href="https://github.com/georgenecro/pacman">main repository</a> του Project μου βρίσκεται στην παρακάτω διεύθυνση. 
+
+- To παιχνίδι βρίσκεται στην παρακάτω διεύθυνση: https://georgenecro.github.io/pacman/pacman.html
+
+- Εντελώς πληροφοριακά δούλεψα λίγο το project σε ένα ξεχωριστώ repository. https://github.com/georgenecro/ZeldMan (ολα μεταφερθηκαν στο main repository)
+
+- Τα πρόγραμματα που χρησιμοποίησα είναι τα Tiled, TexturePacker, XAMPP, Photoshop, Gimp.
