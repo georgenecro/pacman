@@ -48,6 +48,6 @@
 
 - To <a href="https://georgenecro.github.io/pacman/pacman.html">εκτελέσιμο παιχνίδι</a>.
 
-- Εντελώς πληροφοριακά δούλεψα λίγο το project σε ένα <a href="https://github.com/georgenecro/ZeldMan">ξεχωριστώ repository</a>..(ολα μεταφερθηκαν στο main repository)
+- Εντελώς πληροφοριακά δούλεψα λίγο το project σε ένα <a href="https://github.com/georgenecro/ZeldMan">ξεχωριστώ repository</a>.(ολα μεταφερθηκαν στο main repository)
 
 - Τα πρόγραμματα που χρησιμοποίησα είναι τα Tiled, TexturePacker, XAMPP, Photoshop, Gimp.
